@@ -12,23 +12,24 @@ function Meeting() {
     const [loading, setLoading] = useState(false);
     const [title, setTitle] = useState("");
     const [desc, setDesc] = useState("");
+    const [amount, setAmount] = useState("");
 
     const ref = firebase.firestore().collection("meetings");
     // console.log(ref)
 
     // GET FUNCTION 
     function getMeetings(){
-    setLoading(true);
-    ref.onSnapshot((querySnapshot) => {
-        const meetingList = [];
-        querySnapshot.forEach((doc) => {
-        meetingList.push(doc.data());
+        setLoading(true);
+        ref.onSnapshot((querySnapshot) => {
+            const meetingList = [];
+            querySnapshot.forEach((doc) => {
+            meetingList.push(doc.data());
 
+            });
+            setMeetings(meetingList);
+            setLoading(false);
         });
-        setMeetings(meetingList);
-        setLoading(false);
-    });
-    }
+        }
 
     useEffect(() => {
         getMeetings();
@@ -36,16 +37,16 @@ function Meeting() {
 
     // ADD FUNCTION 
     function addMeeting(newMeeting) {
-    ref 
-        .doc(newMeeting.id)
-        .set(newMeeting)
-        .then(() => {
-        setMeetings((prev) => [newMeeting, ...prev]); 
-        })
-        .catch((err) => {
-        console.error(err);
-        });
-    }
+        ref 
+            .doc(newMeeting.id)
+            .set(newMeeting)
+            // .then(() => {
+            // setMeetings((prev) => [newMeeting, ...prev]); 
+            // })
+            .catch((err) => {
+            console.error(err);
+            });
+        }
 
     // DELETE FUNCTION 
     function deleteMeeting(meeting) {
@@ -60,42 +61,68 @@ function Meeting() {
     // EDIT FUNCTION
     function editMeeting(updatedMeeting) {
     setLoading();
-    ref
-        .doc(updatedMeeting.id)
-        .update(updatedMeeting)
-        .catch((err) => {
-        console.error(err);
-        });
-    }
+        ref
+            .doc(updatedMeeting.id)
+            .update(updatedMeeting)
+            .catch((err) => {
+            console.error(err);
+            });
+        }
+    // Add Incentive 
+    function addIncentive(addPayment) {
+        ref 
+            .doc(addPayment.id)
+            .set(addPayment)
+            .catch((err) => {
+            console.error(err);
+            });
+        }
 
     return (
         <Fragment>
             <h1>Events from City of Portland</h1>
             <div className="inputBox">
             <h3>Add New Meeting</h3>
+
+            {/* input section for meeting little */}
             <input
+                placeholder ="Meeting Title"
                 type="text"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}/>
 
-            <textarea value={desc} onChange={(e) => setDesc(e.target.value)} />
-            <button onClick={() => addMeeting({ title, desc, id: uuidv4() })}>
-                Submit
+            <input 
+                placeholder="Incentive Amount"
+                type="text"
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)} />
+
+        {/* input section for meeting description and works with editing */}
+            <textarea 
+                placeholder = "Meeting Description"
+                value={desc} 
+                onChange={(e) => setDesc(e.target.value)} />
+
+            <button onClick={() => addMeeting({ title, desc, amount, id: uuidv4() })}>
+                SUBMIT
             </button>
             </div>
+
+            {/* line break */}
             <hr />
+
             {loading ? <h1>Loading...</h1> : null}
             {meetings.map((meeting) => (
             <div className="meeting" key={meeting.id}>
                 <h2>{meeting.title}</h2>
                 <p>{meeting.desc}</p>
+                <p>{meeting.amount}</p>
                 <div>
-                <button onClick={() => deleteMeeting(meeting)}>X</button>
+                <button onClick={() => deleteMeeting(meeting)}>Delete</button>
+                {/* <button onClick={() => addIncentive(meeting)}>Add Incentive</button> */}
                 <button
-                    onClick={() =>
-                    editMeeting({ title: meeting.title, desc, id: meeting.id })
-                    }
-                >
+                    onClick={() => editMeeting({ title: meeting.title, desc, id: meeting.id })
+                    }>
                     Edit
                 </button>
                 </div>
