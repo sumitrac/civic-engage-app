@@ -122,7 +122,7 @@ function Meeting() {
                 <p>{meeting.desc}</p>
                 {/* <p>{meeting.amount}</p> */}
                 <div>
-                {/* <button onClick={() => deleteMeeting(meeting)}>Delete</button> */}
+                <button onClick={() => deleteMeeting(meeting)}>Delete</button>
                 {/* <button onClick={() => addIncentive(meeting)}>Add Incentive</button> */}
                 <button
                     onClick={() => editMeeting({tag:meeting.tag, title:meeting.title, start_time:meeting.event_start, end_time:meeting.event_end, desc, id: meeting.id })
