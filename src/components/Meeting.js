@@ -114,14 +114,17 @@ function Meeting() {
             {loading ? <h1>Loading...</h1> : null}
             {meetings.map((meeting) => (
             <div className="meeting" key={meeting.id}>
+                <p>{meeting.tag}</p>
                 <h2>{meeting.title}</h2>
+                <time>{meeting.start_time}</time>
+                <time>{meeting.end_time}</time>
                 <p>{meeting.desc}</p>
-                <p>{meeting.amount}</p>
+                {/* <p>{meeting.amount}</p> */}
                 <div>
                 <button onClick={() => deleteMeeting(meeting)}>Delete</button>
                 {/* <button onClick={() => addIncentive(meeting)}>Add Incentive</button> */}
                 <button
-                    onClick={() => editMeeting({ title: meeting.title, desc, id: meeting.id })
+                    onClick={() => editMeeting({tag:meeting.tag, title:meeting.title, start_time:meeting.start_time, end_time:meeting.end_time, desc, id: meeting.id })
                     }>
                     Edit
                 </button>
