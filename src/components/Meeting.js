@@ -26,6 +26,7 @@ function Meeting() {
             meetingList.push(doc.data());
 
             });
+            console.log(meetingList)
             setMeetings(meetingList);
             setLoading(false);
         });
@@ -116,15 +117,15 @@ function Meeting() {
             <div className="meeting" key={meeting.id}>
                 <p>{meeting.tag}</p>
                 <h2>{meeting.title}</h2>
-                <time>{meeting.start_time}</time>
-                <time>{meeting.end_time}</time>
+                <time>{meeting.event_start}</time>
+                <time>{meeting.event_end}</time>
                 <p>{meeting.desc}</p>
                 {/* <p>{meeting.amount}</p> */}
                 <div>
                 {/* <button onClick={() => deleteMeeting(meeting)}>Delete</button> */}
                 {/* <button onClick={() => addIncentive(meeting)}>Add Incentive</button> */}
                 <button
-                    onClick={() => editMeeting({tag:meeting.tag, title:meeting.title, start_time:meeting.start_time, end_time:meeting.end_time, desc, id: meeting.id })
+                    onClick={() => editMeeting({tag:meeting.tag, title:meeting.title, start_time:meeting.event_start, end_time:meeting.event_end, desc, id: meeting.id })
                     }>
                     Edit
                 </button>
