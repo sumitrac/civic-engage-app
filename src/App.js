@@ -16,7 +16,7 @@ import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './pages';
 import About from './pages/about';
-import Events from './pages/events';
+import EventPage from './pages/EventPage';
 
 function App() {
   // return (
@@ -35,8 +35,9 @@ function App() {
         <Navbar />
         <Switch>
           {/* <Route path='/' exact component={Home} /> */}
-          <Route path='/events' component={Events} />
           <Route path='/about' component={About} />
+          <Route path='/EventPage' component={EventPage} />
+          {/* <Route path='/about' component={About} /> */}
         </Switch>
       </Router>
     

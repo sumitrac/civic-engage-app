@@ -1,7 +1,7 @@
 import React from 'react';
 import Meeting from '../components/Meeting';
 
-const Events = () => {
+const EventPage = () => {
     return (
     <div
         // style={{
@@ -11,10 +11,10 @@ const Events = () => {
         // height: '100vh'
         // }}
     >
-        <h1>Check out events from city of Portland</h1>
+        <h1>Check out all events</h1>
         {<Meeting/>}
     </div>
     );
     };
 
-export default Events;
+export default EventPage;
