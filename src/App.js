@@ -12,11 +12,11 @@ import Welcome from './Welcome';
 
 // import React from 'react';
 import './App.css';
-import Navbar from './components/Navbar';
+import Navbar from './components/navbar/navBar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Home from './pages';
-import About from './pages/about';
-import EventPage from './pages/EventPage';
+
+import About from './components/pages/about';
+import EventPage from './components/pages/EventPage';
 
 function App() {
   // return (
@@ -33,12 +33,12 @@ function App() {
       
       <Router>
         <Navbar />
-        <Switch>
+        {/* <Switch> */}
           {/* <Route path='/' exact component={Home} /> */}
           <Route path='/about' component={About} />
           <Route path='/EventPage' component={EventPage} />
           {/* <Route path='/about' component={About} /> */}
-        </Switch>
+        {/* </Switch> */}
       </Router>
     
       {/* <AuthProvider>

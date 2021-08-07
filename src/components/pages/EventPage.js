@@ -1,5 +1,5 @@
 import React from 'react';
-import Meeting from '../components/Meeting';
+import Meeting from '../Meeting';
 
 const EventPage = () => {
     return (
