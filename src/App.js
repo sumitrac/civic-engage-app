@@ -8,6 +8,7 @@ import 'firebase/firestore';
 import { AuthProvider } from './components/auth/Auth';
 import Login from "./components/auth/Login";
 import Welcome from './Welcome';
+import Footer from "./components/footer/Footer"
 
 
 // import React from 'react';
@@ -15,7 +16,7 @@ import './App.css';
 import Navbar from './components/navbar/navBar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import About from './components/pages/about';
+import About from './components/pages/About';
 import EventPage from './components/pages/EventPage';
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
         <Welcome />
         <Login />
       </AuthProvider> */}
+      <Footer/>
     </div>
 
   );}
