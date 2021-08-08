@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import firebase from "../firebase.js";
+import firebase from "../../firebase";
 
 export const AuthContext = React.createContext();
 
@@ -9,7 +9,8 @@ export const AuthProvider = ({ children }) => {
 
     useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
-        setCurrentUser(user);
+        // set this to user UID from firebase to store in individual user
+        setCurrentUser(user); 
         setLoading(false);
     });
     }, []);
