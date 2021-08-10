@@ -1,16 +1,17 @@
 import React from 'react'
-import ProjectSummary from "./EventSummary" 
+import EventSummary from "./EventSummary" 
 
 
-const ProjectList = () => {
+const EventList = ({ events }) => {
     return (
-        <div className="project-list section">
-            <ProjectSummary />
-            <ProjectSummary />
-            <ProjectSummary />
-            <ProjectSummary />
+        <div className="event-list section">
+            { events && events.map(event => {
+                return (
+                    <EventSummary event={ event } key={event.id} />
+                )
+            })}
         </div>
     )
 }
 
-export default ProjectList; 
+export default EventList; 
