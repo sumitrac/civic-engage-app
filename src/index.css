@@ -6,10 +6,22 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: aliceblue;
-  padding: 10px;
+  /* padding: 10px; */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+form {
+  padding: 20px;
+  margin-top: 60px;
+}
+
+form button, form h5 {
+  margin: 20px, 0;
+}
+input[type=text]:not(.brower-default):focus:not([readonly]){
+  border-color: blue; 
+  box-shadow: none;
 }
