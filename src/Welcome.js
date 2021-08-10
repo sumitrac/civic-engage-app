@@ -1,11 +1,11 @@
-// import React, { useContext } from "react";
-// import { AuthContext } from "./components/auth/Auth";
+import React, { useContext } from "react";
+import { AuthContext } from "./components/auth/Auth";
 
-// const Welcome = () => {
-//     const { currentUser } = useContext(AuthContext);
-//     const currentUserEmail = currentUser ? currentUser.email : "";
+const Welcome = () => {
+    const { currentUser } = useContext(AuthContext);
+    const currentUserEmail = currentUser ? currentUser.email : "";
 
-//     return <h2>{`Welcome ${currentUserEmail}`}</h2>;
-//     };
+    return <h2>{`Welcome ${currentUserEmail}`}</h2>;
+    };
 
-// export default Welcome;
+export default Welcome;

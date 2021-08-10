@@ -3,7 +3,6 @@ import firebase from "firebase/app";
 import "firebase/firebase";
 import "firebase/auth";
 
-
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_FIREBASE_KEY,
     authDomain: process.env.REACT_APP_FIREBASE_DOMAIN,
@@ -16,5 +15,6 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
+// firebase.firestore().settings({ timestampsInSnapshots: true })
 
 export default firebase;
