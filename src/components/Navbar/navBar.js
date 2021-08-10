@@ -15,7 +15,7 @@ const Navbar = () => {
         {/* <Bars /> */}
 
         <NavMenu>
-            <NavLink to='/about' activeStyle>About</NavLink>
+            <NavLink to='/' activeStyle>About</NavLink>
             <NavLink to='/EventPage' activeStyle>Events</NavLink>
             
             {/* <NavLink to='/sign-up' activeStyle>

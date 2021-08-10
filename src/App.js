@@ -25,6 +25,8 @@ function App() {
   //     {<Meeting/>}
   //   </Fragment>
   // )}  
+  // const [user, setUser] = useState()
+  // const [eventList, setEventList] = useState();
   return (
     <div>
       <AuthProvider>
@@ -36,7 +38,7 @@ function App() {
         <Navbar />
         {/* <Switch> */}
           {/* <Route path='/' exact component={Home} /> */}
-          <Route path='/about' component={About} />
+          <Route path='/' component={About} />
           <Route path='/EventPage' component={EventPage} />
           {/* <Route path='/about' component={About} /> */}
         {/* </Switch> */}

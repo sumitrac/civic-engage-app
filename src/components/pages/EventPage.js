@@ -1,5 +1,5 @@
 import React from 'react';
-import Meeting from '../Events';
+import Events from '../Events';
 
 const EventPage = () => {
     return (
@@ -12,7 +12,7 @@ const EventPage = () => {
         // }}
     >
         <h1>Check out all events</h1>
-        {<Meeting/>}
+        {<Events/>}
     </div>
     );
     };
