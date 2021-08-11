@@ -13,7 +13,7 @@ import Footer from "./components/footer/Footer"
 // import React from 'react';
 import './App.css';
 import Navbar from './components/navbar/navBar';
-import { BrowserRouter, Switch, Route, Router } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Router} from 'react-router-dom';
 
 import About from './components/pages/About';
 import EventPage from './components/pages/EventPage';
@@ -26,6 +26,7 @@ import EventPage from './components/pages/EventPage';
 // import CreateEvent from './components/event/CreateEvent'
 import React, { useContext } from "react";
 // import { Router } from "@reach/router";
+
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import Application from "./components/Application";
@@ -45,17 +46,17 @@ function App() {
           <Application />
         </UserProvider>
           
-        <Router>
-          <Navbar />
-              {/* <Switch> */}
+        <BrowserRouter>
+          {/* <Navbar /> */}
+              <Switch>
                 {/* <Route path='/' exact component={Home} /> */}
-            <Route path='/' component={About} />
-            <Route path='/EventPage' component={EventPage} />
+                  <Route path='/' component={About} />
+                  <Route path='/EventPage' component={EventPage} />
                 {/* <Route path='/about' component={About} /> */}
-              {/* </Switch> */}
-          </Router>
+              </Switch>
+        </BrowserRouter>
 
-          <Footer/>
+          {/* <Footer/> */}
       </div>
   
   );

@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import { Router } from 'react-router-dom';
-import { Link } from "@reach/router";
+// import { Router } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { signInWithGoogle } from "../firebase";
 import { auth } from "../firebase";
 
