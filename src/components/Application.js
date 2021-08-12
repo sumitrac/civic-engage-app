@@ -29,7 +29,7 @@ function Application() {
             <Switch>
               {/* <Route path='/' exact component={Home} /> */}
                 <Route path='/' component={SignUp} />
-                <Route path='/' component={SignIn} />
+                {/* <Route path='/' component={SignIn} /> */}
                 <Route path='/' component={PasswordReset} />
               {/* <Route path='/about' component={About} /> */}
             </Switch>
