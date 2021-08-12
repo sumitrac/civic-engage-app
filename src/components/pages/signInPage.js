@@ -1,7 +1,7 @@
 import React from 'react';
-import Events from '../Events';
+import signIn from '../../signIn';
 
-const eventPage = () => {
+const signInPage = () => {
     return (
     <div
         // style={{
@@ -11,10 +11,10 @@ const eventPage = () => {
         // height: '100vh'
         // }}
     >
-        <h1>Check out all events</h1>
-        {<Events/>}
+        <h1>Sign In</h1>
+        {<signIn/>}
     </div>
     );
     };
 
-export default eventPage;
+export default signInPage;

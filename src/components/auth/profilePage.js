@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import { UserContext } from "../providers/UserProvider";
+import { UserContext } from "../../providers/UserProvider";
 import { navigate } from 'react-router-dom';
-import {auth} from "../firebase";
+import {auth} from "../../firebase";
 
 const ProfilePage = () => {
     const user = useContext(UserContext);

@@ -15,8 +15,8 @@ import './App.css';
 import NavBar from './components/navbar/NavBar';
 import { BrowserRouter, Switch, Route, Router} from 'react-router-dom';
 
-import About from './components/pages/about';
-import EventPage from './components/pages/EventPage';
+import About from './components/pages/aboutPage';
+import EventPage from './components/pages/eventPage';
 // import Navbar from './components/layout/Navbar'
 // // import Dashboard from './components/dashboard/Dashboard';
 // import React, { Component } from 'react';
@@ -27,11 +27,11 @@ import EventPage from './components/pages/EventPage';
 import React, { useContext } from "react";
 // import { Router } from "@reach/router";
 
-import SignIn from "./components/SignIn";
-import SignUp from "./components/SignUp";
-import Application from "./components/Application";
+import SignIn from "./components/auth/signIn";
+import SignUp from "./components/auth/signUp";
+// import Application from "./components/auth/Application";
 import UserProvider from "./providers/UserProvider";
-import ProfilePage from "./components/ProfilePage";
+import ProfilePage from "./components/auth/profilePage";
 import { UserContext } from "./providers/UserProvider";
 
 function App() {
@@ -55,7 +55,9 @@ function App() {
                 {/* <Route path='/' exact component={Home} /> */}
                   <Route path='/' exact component={About} />
                   <Route path='/EventPage' component={EventPage} />
-                  <Route path='/Application' component={Application} />
+                  {/* <Route path='/Application' component={Application} /> */}
+                  <Route path='/SignUp' component={SignIn} />
+                  <Route path='/SignIn' component={SignIn} />
               </Switch>
               
         </BrowserRouter>
