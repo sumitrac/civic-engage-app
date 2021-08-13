@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import { Link } from 'react-router-dom';
 import { signInWithGoogle } from "../../firebase";
 import { auth } from "../../firebase";
+import { useHistory } from "react-router-dom";
 
 
 const SignIn = () => {
@@ -10,6 +11,9 @@ const SignIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
+
+    // use history to direct to another page 
+    const history = useHistory();
 
     const signInWithEmailAndPasswordHandler = (event,email, password) => {
         event.preventDefault();
@@ -37,6 +41,7 @@ return (
         <h1 className="text-3xl mb-2 text-center font-bold">Sign In</h1>
         <div className="border border-blue-400 mx-auto w-11/12 md:w-2/4 rounded py-8 px-4 md:px-8">
         {error !== null && <div className = "py-4 bg-red-600 w-full text-white text-center mb-3">{error}</div>}
+
         <form className="">
             <label htmlFor="userEmail" className="block">
             Email:
@@ -46,7 +51,7 @@ return (
                 className="my-1 p-1 w-full"
                 name="userEmail"
                 value = {email}
-                placeholder="E.g: faruq123@gmail.com"
+                placeholder="email@gmail.com"
                 id="userEmail"
                 onChange = {(event) => onChangeHandler(event)}/>
             <label htmlFor="userPassword" className="block">
@@ -61,21 +66,30 @@ return (
                 id="userPassword"
                 onChange = {(event) => onChangeHandler(event)}
             />
-            <button className="bg-green-400 hover:bg-green-500 w-full py-2 text-white" onClick = {(event) => {signInWithEmailAndPasswordHandler(event, email, password)}}>
+            <button className="bg-green-400 hover:bg-green-500 w-full py-2 text-white" onClick = {(event) => {signInWithEmailAndPasswordHandler(event, email, password)}} 
+            // onClick ={() => {history.push('/eventPage')}}
+                >
                 Sign in
             </button>
-            </form>
+
+                {/* <button className="bg-green-400 hover:bg-green-500 w-full py-2 text-white" onClick ={() => {
+                    history.push('/eventPage')
+                }}>
+                Sign in
+                </button> */}
+        </form>
+
             <p className="text-center my-3">or</p>
             <button
                 className="bg-red-500 hover:bg-red-600 w-full py-2 text-white"
                 onClick={() => {
                     signInWithGoogle();
-            }}
-            >
-            Sign in with Google
+                }}>
+                Sign in with Google
             </button>
+
             <p className="text-center my-3">
-            Don't have an account?{" "}
+                    Don't have an account?{" "}
             <Link to="signUp" className="text-blue-500 hover:text-blue-600">
                 Sign up here
             </Link>{" "}

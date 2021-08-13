@@ -95,6 +95,7 @@ function Events() {
 
             {/* if frontend user input do this? */}
 
+            {/* This section will show up only when user login in */}
             { user && (
                 <div className="eventInput">
                 <h3>Add New Event</h3>
@@ -160,10 +161,11 @@ function Events() {
 
             }   
 
+
             {/* line break */}
-            
-            {/* if backend data, do this? */}
             <hr />
+
+            {/* This section will show up without user login */}
             <h1>Check out events from the City of Portland!</h1>
             {loading ? <h1>Loading...</h1> : null}
 
@@ -177,18 +179,20 @@ function Events() {
                 <p>{event.info_link}</p>
                 <p>{event.amount}</p>
 
+            {/* This happen when user is login and login email match */}
                 {user && event.email == user.email && (
                 <div> 
                     <button onClick={() => deleteMeeting(event)}>Delete</button>
-                    {/* <button onClick={() => addIncentive(event)}>Add Incentive</button> */}
-                    <button
-                        onClick={() => editMeeting({tag: event.tag, title: event.title, start_date: event.start_date, end_date: event.end_date, desc: event.desc, id: event.id })
-                        }>
-                        Edit
-                    </button>
+
+                    {/* both method not working */}
+                    {/* <button onClick={() => editMeeting(updatedEvent)}>Edit event</button> */}
+
+                    <button onClick={() => editMeeting({tag: event.tag, title: event.title, start_date: event.start_date, end_date: event.end_date, desc: event.desc, id: uuidv4, id: event.id })
+                        }>Edit</button>
                 </div>
                 )
                 }
+
                 {user &&  (
                 <div> 
                     <button onClick={() => addIncentive(event)}>Add Incentive</button>

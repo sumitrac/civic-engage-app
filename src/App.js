@@ -13,9 +13,9 @@ import Footer from "./components/footer/Footer"
 // import React from 'react';
 import './App.css';
 import NavBar from './components/navbar/NavBar';
-import { BrowserRouter, Switch, Route, Router} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
-import About from './components/pages/aboutPage';
+import aboutPage from './components/pages/aboutPage';
 import EventPage from './components/pages/eventPage';
 // import Navbar from './components/layout/Navbar'
 // // import Dashboard from './components/dashboard/Dashboard';
@@ -46,21 +46,24 @@ function App() {
           <Application />
         </UserProvider> */}
           
-        <BrowserRouter>
-        <UserProvider>
-          <NavBar />
-              <Switch>
-                {/* <Route path='/' exact component={Home} /> */}
-                  <Route path='/' exact component={About} />
-                  <Route path='/EventPage' component={EventPage} />
-                  {/* <Route path='/Application' component={Application} /> */}
-                  <Route path='/SignUp' component={SignUp} />
-                  <Route path='/SignIn' component={SignIn} />
-                  <Route path='/profilePage' component={ProfilePage} />
-              </Switch>
-          </UserProvider> 
+        <Router>
+
+          <UserProvider>
+
+            <NavBar />
+
+                <Switch>
+                  {/* <Route path='/' exact component={Home} /> */}
+                    <Route path='/' exact component={aboutPage} />
+                    <Route path='/EventPage' component={EventPage} />
+                    {/* <Route path='/Application' component={Application} /> */}
+                    <Route path='/SignUp' component={SignUp} />
+                    <Route path='/SignIn' component={SignIn} />
+                    <Route path='/profilePage' component={ProfilePage} />
+                </Switch>
+            </UserProvider> 
               
-        </BrowserRouter>
+        </Router>
 
           {/* <Footer/> */}
       </div>
