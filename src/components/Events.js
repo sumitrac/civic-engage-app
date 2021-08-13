@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Fragment } from "react";
+import React, { useEffect, useState, Fragment, useContext } from "react";
 import firebase from "../firebase";
 // import firebase from 'firebase';
 // import * as firebase from 'firebase';
@@ -6,8 +6,11 @@ import 'firebase/firestore';
 // import './App.css';
 // import App from "./src/app";
 import { v4 as uuidv4 } from "uuid";
+import { UserContext } from "../providers/UserProvider";
 
 function Events() {
+    const user = useContext(UserContext);
+
     const [events, setEvents] = useState([]);
     const [loading, setLoading] = useState(false);
     const [tag, setTag] = useState("");
@@ -22,6 +25,9 @@ function Events() {
 
     // GET FUNCTION 
     function getEvents(){
+
+        // user? 
+
         setLoading(true);
         ref.onSnapshot((querySnapshot) => {
             const eventList = [];
@@ -41,6 +47,7 @@ function Events() {
 
     // ADD FUNCTION 
     function addEvent(newEvent) {
+        newEvent.email = user.email 
         ref 
             .doc(newEvent.id)
             .set(newEvent)
@@ -88,7 +95,8 @@ function Events() {
 
             {/* if frontend user input do this? */}
 
-            <div className="eventInput">
+            { user && (
+                <div className="eventInput">
                 <h3>Add New Event</h3>
 
                 {/* input section for event tag */}
@@ -148,6 +156,9 @@ function Events() {
                     SUBMIT
                 </button>
             </div>
+            )
+
+            }   
 
             {/* line break */}
             
@@ -166,15 +177,24 @@ function Events() {
                 <p>{event.info_link}</p>
                 <p>{event.amount}</p>
 
-                <div>
+                {user && event.email == user.email && (
+                <div> 
                     <button onClick={() => deleteMeeting(event)}>Delete</button>
                     {/* <button onClick={() => addIncentive(event)}>Add Incentive</button> */}
                     <button
-                        onClick={() => editMeeting({tag: event.tag, title: event.title, start_date: event.event_start, end_date: event.event_end, desc: event.desc, id: event.id })
+                        onClick={() => editMeeting({tag: event.tag, title: event.title, start_date: event.start_date, end_date: event.end_date, desc: event.desc, id: event.id })
                         }>
                         Edit
                     </button>
                 </div>
+                )
+                }
+                {user &&  (
+                <div> 
+                    <button onClick={() => addIncentive(event)}>Add Incentive</button>
+                </div>
+                )
+                }
             </div>
             ))}
         </Fragment>

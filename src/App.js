@@ -47,18 +47,18 @@ function App() {
         </UserProvider> */}
           
         <BrowserRouter>
-        {/* <UserProvider>
-          <Application />
-        </UserProvider> */}
+        <UserProvider>
           <NavBar />
               <Switch>
                 {/* <Route path='/' exact component={Home} /> */}
                   <Route path='/' exact component={About} />
                   <Route path='/EventPage' component={EventPage} />
                   {/* <Route path='/Application' component={Application} /> */}
-                  <Route path='/SignUp' component={SignIn} />
+                  <Route path='/SignUp' component={SignUp} />
                   <Route path='/SignIn' component={SignIn} />
+                  <Route path='/profilePage' component={ProfilePage} />
               </Switch>
+          </UserProvider> 
               
         </BrowserRouter>
 
