@@ -14,14 +14,13 @@ const Navbar = () => {
                 {/* <NavLink to='/' activeStyle>Civic Engage App</NavLink> */}
                 <NavLink to='/' activeStyle>About</NavLink>
                 <NavLink to='/EventPage' activeStyle>Events</NavLink>
-                {/* <NavLink to='/createEvent' activeStyle>Create Event</NavLink> */}
-                {/* <NavBtnLink to='/signUp' activeStyle>Sign Up</NavBtnLink> */}
-                <NavBtnLink to='/signIn'>Sign In</NavBtnLink>
-                { user && <NavBtnLink to='/profilePage'>Profile</NavBtnLink> }
-                
-                {/* <NavBtnLink to='/Application' activeStyle>Sign Up</NavBtnLink> */}
 
-                
+                {/* <NavBtnLink to='/signUp' activeStyle>Sign Up</NavBtnLink> */}
+                {/* < NavBtnLink to='/signIn'>Sign In</NavBtnLink> */}
+                { !user && <NavBtnLink to='/signIn'>Sign In</NavBtnLink> }
+
+                { user && <NavBtnLink to='/profilePage'>Profile</NavBtnLink> }
+ 
             </NavMenu>
         </Nav>
     </>

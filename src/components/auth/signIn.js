@@ -22,6 +22,7 @@ const SignIn = () => {
         setError("Error signing in with password and email!");
             console.error("Error signing in with password and email", error);
         });
+        history.push('/ProfilePage')
     };
     
     const onChangeHandler = (event) => {
@@ -69,6 +70,10 @@ return (
             <button className="bg-green-400 hover:bg-green-500 w-full py-2 text-white" onClick = {(event) => {signInWithEmailAndPasswordHandler(event, email, password)}} 
             // onClick ={() => {history.push('/eventPage')}}
                 >
+            {/* <Link to="signUp" className="text-blue-500 hover:text-blue-600">
+                Sign up here
+            </Link>{" "} */}
+
                 Sign in
             </button>
 

@@ -12,7 +12,7 @@ import Footer from "./components/footer/Footer"
 
 // import React from 'react';
 import './App.css';
-import NavBar from './components/navbar/NavBar';
+import Navbar from './components/navbar/Navbar';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 import aboutPage from './components/pages/aboutPage';
@@ -50,7 +50,7 @@ function App() {
 
           <UserProvider>
 
-            <NavBar />
+            <Navbar />
 
                 <Switch>
                   {/* <Route path='/' exact component={Home} /> */}
