@@ -4,7 +4,8 @@ const aboutPage = () => {
     return (
     <div
         style={{
-        background: 'lightblue',
+        // backgroundImage: 'url(http://localhost:3000/us_capitol1.jpg)',
+        // background: 'lightblue',
         // display: 'flex',
         // justifyContent: 'Right',
         // alignItems: 'Right',

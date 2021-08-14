@@ -17,6 +17,7 @@ const SignIn = () => {
 
     const signInWithEmailAndPasswordHandler = (event,email, password) => {
         event.preventDefault();
+        console.log('hello')
         
         auth.signInWithEmailAndPassword(email, password).catch(error => {
         setError("Error signing in with password and email!");
@@ -66,7 +67,7 @@ return (
                 id="userPassword"
                 onChange = {(event) => onChangeHandler(event)}
             />
-            <button className="bg-green-400 hover:bg-green-500 w-full py-2 text-white" onClick = {(event) => {signInWithEmailAndPasswordHandler(event, email, password)}} 
+            <button className="bg-green-400 hover:bg-green-500 w-full py-2 text-dark" onClick = {(event) => {signInWithEmailAndPasswordHandler(event, email, password)}} 
             // onClick ={() => {history.push('/eventPage')}}
                 >
                 Sign in
@@ -81,7 +82,7 @@ return (
 
             <p className="text-center my-3">or</p>
             <button
-                className="bg-red-500 hover:bg-red-600 w-full py-2 text-white"
+                className="bg-red-500 hover:bg-red-600 w-full py-2 text-dark"
                 onClick={() => {
                     signInWithGoogle();
                 }}>

@@ -1,6 +1,7 @@
 import React from 'react';
+import signUp from '../../signUp';
 
-const signUp = () => {
+const signUpPage = () => {
     return (
         <div
     //     style={{
@@ -12,8 +13,9 @@ const signUp = () => {
         >
         <h1>Sign Up</h1>
         <p>New user sign up page</p>
+        {<signUp/>}
     </div>
     );
 };
 
-export default signUp;
+export default signUpPage;
