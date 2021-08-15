@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import { auth, signInWithGoogle, generateUserDocument } from "../../firebase";
 
@@ -53,7 +53,7 @@ const SignUp = () => {
             className="my-1 p-1 w-full "
             name="displayName"
             value={displayName}
-            placeholder="E.g: Faruq"
+            placeholder="Name"
             id="displayName"
             onChange={event => onChangeHandler(event)}
           />

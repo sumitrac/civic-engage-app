@@ -73,7 +73,7 @@ function Events() {
     function editMeeting(updatedEvent) {
         // newEvent.email = user.email 
         console.log('hello')
-        setLoading();
+        // setLoading();
         ref
             .doc(updatedEvent.id)
             .update(updatedEvent)

@@ -1,7 +1,34 @@
 import React, { useContext } from 'react';
 import { Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink } from './NavbarElements';
-import { NavLink as Link } from 'react-router-dom';
+// import { NavLink as Link } from 'react-router-dom';
 import { UserContext } from '../../providers/UserProvider';
+// import { Nav, Container } from 'react-bootstrap';
+
+// const Navbar = () => {
+//         // const user = useContext(UserContext);
+//         return (
+//         <>
+//             <Navbar collapseOnSelect fixed='top' expand='sm' bg='dark' variant='dark'>
+//                 <Container>
+//                     {/* <Navbar.Brand>Civic Engage</Navbar.Brand>
+//                     <Navbar.Toggle aria-controls='responsive-navbar-nav' />
+//                     <Navbar.Collapse id='responsive-navbar-nav'>
+//                         <Nav>
+//                             <Nav.Link href='/'>Home</Nav.Link>
+//                             <Nav.Link href='/EventPage'>Events</Nav.Link>
+//                             <Nav.Link href='/signIn'>Sign In</Nav.Link>
+//                             { !user && <Nav.Link to='/signIn'>Sign In</Nav.Link> }
+//                              {  user && <Nav.Link to='/profilePage'>Profile</Nav.Link> }
+//                          </Nav>
+//                      </Navbar.Collapse> */}
+    
+//                  </Container>
+//              </Navbar>
+//          </>
+//          );
+//      }
+// export default Navbar;
+
 
 
 const Navbar = () => {
