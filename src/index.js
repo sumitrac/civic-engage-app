@@ -10,7 +10,7 @@ import reportWebVitals from './reportWebVitals';
 // import { reduxFirestore, getFirestore } from 'redux-firestore';
 // import { reactReduxFirebase, getFirebase } from 'react-redux-firebase';
 // import fbConfig from './config/fbConfig'
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 // const store = createStore(rootReducer, 
 //   compose( 
@@ -21,12 +21,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // );
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  // <React.StrictMode>
+    <App />,
+  // </React.StrictMode>,
   document.getElementById('root'));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// reportWebVitals();

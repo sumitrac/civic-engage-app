@@ -34,7 +34,7 @@ import UserProvider from "./providers/UserProvider";
 import ProfilePage from "./components/auth/profilePage";
 // import { UserContext } from "./providers/UserProvider";
 
-function App() {
+const App = () => {
     return (
       <div>
         {/* This is disable for now */}

@@ -1,8 +1,7 @@
-import { white } from 'ansi-colors';
-import { whiteBright } from 'chalk';
+
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-// import { Image } from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
 // import about from './about.css';
 import capitol2 from './capitol2.jpg'
 
@@ -11,7 +10,7 @@ const aboutPage = () => {
     <div 
         style={{
             class: 'capitol2',
-            backgroundImage: `url(${capitol2})`,
+            // backgroundImage: `url(${capitol2})`,
             backgroundSize: 'cover',
             height: '100vh',
             fontSize: 30,
@@ -29,6 +28,20 @@ const aboutPage = () => {
                 <Col>3 of 3</Col>
             </Row>
         </Container>
+
+        <Card style={{ width: '18rem' }}>
+            <Card.Img variant="top" src="holder.js/100px180" />
+            <Card.Body>
+                <Card.Title>Card Title</Card.Title>
+                <Card.Text>
+                Some quick example text to build on the card title and make up the bulk of
+                the card's content.
+                </Card.Text>
+                <Button variant="primary">Go somewhere</Button>
+            </Card.Body>
+        </Card>
+
+        <Button>checking if bootstrap work</Button>
 
         <h1>This is an about page!</h1>
         <h1>Civic Engage APP</h1>
