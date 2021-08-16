@@ -1,23 +1,27 @@
 
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import { Button, Card } from 'react-bootstrap';
-// import about from './about.css';
-import capitol2 from './capitol2.jpg'
+// import { Container, Row, Col } from 'react-bootstrap';
+// import { Button, Card } from 'react-bootstrap';
+// // import about from './about.css';
+// import capitol2 from './capitol2.jpg'
+import CarouselContainer from '../carouselImages';
 
 const aboutPage = () => {
     return (
     <div 
-        style={{
-            class: 'capitol2',
-            // backgroundImage: `url(${capitol2})`,
-            backgroundSize: 'cover',
-            height: '100vh',
-            fontSize: 30,
-            color: '#FOF8FF'
-        }} >
+        // style={{
+        //     class: 'capitol2',
+        //     // backgroundImage: `url(${capitol2})`,
+        //     backgroundSize: 'cover',
+        //     height: '100vh',
+        //     fontSize: 30,
+        //     color: '#FOF8FF'
+        // }} 
+        >
+        {/* <h2>This is a sliding images</h2> */}
+        {<CarouselContainer/>}
 
-        <Container>
+        {/* <Container>
             <Row>
                 <Col>Civic Engage project was created during the class of 2021 cohort 15 at Ada Developers Academy.This project provides platform organizers to recruit community members to give public testimony in local government.</Col>
                 <Col>Civic Engage project was created during the class of 2021 cohort 15 at Ada Developers Academy.This project provides platform organizers to recruit community members to give public testimony in local government.</Col>
@@ -45,7 +49,7 @@ const aboutPage = () => {
 
         <h1>This is an about page!</h1>
         <h1>Civic Engage APP</h1>
-        <p>Civic Engage project was created during the class of 2021 cohort 15 at Ada Developers Academy.This project provides platform organizers to recruit community members to give public testimony in local government. </p>
+        <p>Civic Engage project was created during the class of 2021 cohort 15 at Ada Developers Academy.This project provides platform organizers to recruit community members to give public testimony in local government. </p> */}
     </div>
     );
     };

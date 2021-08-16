@@ -8,7 +8,8 @@ import './App.css';
 // import { AuthProvider } from './components/auth/Auth';
 // import Login from "./components/auth/Login";
 // import Welcome from './Welcome';
-// import Footer from "./components/footer/Footer"
+import Footer from "./components/footer/Footer"
+// import getNextEvents from './components/pages/contactPage';
 
 // import React from 'react';
 import './App.css';
@@ -32,6 +33,7 @@ import SignUp from "./components/auth/signUp";
 // import Application from "./components/auth/Application";
 import UserProvider from "./providers/UserProvider";
 import ProfilePage from "./components/auth/profilePage";
+// import getNextEvents from './components/pages/contactPage';
 // import { UserContext } from "./providers/UserProvider";
 
 const App = () => {
@@ -65,7 +67,8 @@ const App = () => {
               
         </Router>
 
-          {/* <Footer/> */}
+        <Footer/>
+        {/* <getNextEvents /> */}
       </div>
   
   );

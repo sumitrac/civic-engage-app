@@ -7,6 +7,7 @@ import 'firebase/firestore';
 // import App from "./src/app";
 import { v4 as uuidv4 } from "uuid";
 import { UserContext } from "../providers/UserProvider";
+import Event from './Event.css'
 
 function Events() {
     const user = useContext(UserContext);
@@ -20,15 +21,19 @@ function Events() {
     const [desc, setDesc] = useState("");
     const [amount, setAmount] = useState("");
 
-    const ref = firebase.firestore().collection("events");
+    const ref = firebase.firestore().collection("events")
+    // .orderBy('title')
+    .limit(10)
     // console.log(ref)
 
     // GET FUNCTION 
     function getEvents(){
 
         // user? 
-
         setLoading(true);
+        // can add filter method there by
+        // ref.where('owner', 'df').onSnapshot((querySnapshot)
+        // .orderBy('score', desc)
         ref.onSnapshot((querySnapshot) => {
             const eventList = [];
             querySnapshot.forEach((doc) => {
@@ -160,7 +165,6 @@ function Events() {
                 </button>
             </div>
             )
-
             }   
 
 
@@ -172,14 +176,15 @@ function Events() {
             {loading ? <h1>Loading...</h1> : null}
 
             {events.map((event) => (
-            <div className="event" key={event.id}>
+            <div className="event_list" key={event.id}>
                 <p>{event.tag}</p>
                 <h2>{event.title}</h2>
                 <time>{event.start_date}</time>
                 <time>{event.end_date}</time>
                 <p>{event.desc}</p>
-                <p>{event.info_link}</p>
+                {/* <p>{event.info_link}</p> */}
                 <p>{event.amount}</p>
+                {/* <p>posted by {event.user}</p> */}
 
             {/* This happen when user is login and login email match */}
                 {user && event.email == user.email && (
