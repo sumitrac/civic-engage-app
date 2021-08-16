@@ -1,23 +1,16 @@
-import contactForm from '../form';
+import ContactForm from '../contactForm';
 
 const contactPage = () => {
     return (
     
     <div>
         <h2>This is a contact page</h2>
-        {<contactForm/>}
+        <ContactForm />
     </div>
 
     );
 }
 export default contactPage;
-
-
-
-
-
-
-
 
 
 

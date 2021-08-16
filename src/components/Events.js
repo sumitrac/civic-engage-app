@@ -20,10 +20,11 @@ function Events() {
     const [end_date, setEnd_date] = useState("")
     const [desc, setDesc] = useState("");
     const [amount, setAmount] = useState("");
+    const [incentive, setIncentive] = useState(false)
 
     const ref = firebase.firestore().collection("events")
     // .orderBy('title')
-    .limit(10)
+    .limit(20)
     // console.log(ref)
 
     // GET FUNCTION 
@@ -53,6 +54,7 @@ function Events() {
     // ADD FUNCTION 
     function addEvent(newEvent) {
         newEvent.email = user.email 
+        const ref = firebase.firestore().collection("events")
         ref 
             .doc(newEvent.id)
             .set(newEvent)
@@ -66,6 +68,7 @@ function Events() {
 
     // DELETE FUNCTION 
     function deleteMeeting(event) {
+        const ref = firebase.firestore().collection("events")
         ref
             .doc(event.id)
             .delete()
@@ -76,8 +79,9 @@ function Events() {
 
     // EDIT FUNCTION
     function editMeeting(updatedEvent) {
+        const ref = firebase.firestore().collection("events")
         // newEvent.email = user.email 
-        console.log('hello')
+        // console.log('hello')
         // setLoading();
         ref
             .doc(updatedEvent.id)
@@ -103,6 +107,8 @@ function Events() {
             {/* if frontend user input do this? */}
 
             {/* This section will show up only when user login in */}
+    
+           {/* if edit button, display this form */}
             { user && (
                 <div className="eventInput">
                 <h3>Add New Event</h3>
@@ -187,7 +193,7 @@ function Events() {
                 {/* <p>posted by {event.user}</p> */}
 
             {/* This happen when user is login and login email match */}
-                {user && event.email == user.email && (
+                {user && event.email === user.email && (
                 <div> 
                     <button onClick={() => deleteMeeting(event)}>Delete</button>
 
@@ -201,13 +207,27 @@ function Events() {
                 }
 
                 {user &&  (
-                <div> 
-                    <button onClick={() => addIncentive(event)}>Add Incentive</button>
+                <div>
+                    <button onClick={() => setIncentive(true)}>Add Incentive</button>
+                    
+                    {incentive && (
+                    <input 
+                    placeholder="Incentive Amount"
+                    type="number"
+                    value={amount}
+                    prefix= {'$'}
+                    onChange={(e) => setAmount(e.target.value)}/>)}
+                
+                    <button onClick={() => addIncentive(event, incentive)}>
+                        SUBMIT
+                    </button> 
                 </div>
                 )
-                }
+                };
+
+
             </div>
-            ))}
+            )) }
         </Fragment>
         );
     }

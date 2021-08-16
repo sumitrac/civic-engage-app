@@ -17,7 +17,7 @@ const ProfilePage = () => {
             <div className="flex border flex-col items-center md:flex-row md:items-start border-blue-400 px-3 py-4">
             <div
                 style={{
-                background: `url(${photoURL || 'https://res.cloudinary.com/dqcsk8rsc/image/upload/v1577268053/avatar-1-bitmoji_upgwhc.png'})  no-repeat center center`,
+                background: `url(${photoURL || 'https://images.unsplash.com/photo-1558103286-b6e3c09fdb07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80'})  no-repeat center center`,
                 backgroundSize: "cover",
                 height: "200px",
                 width: "200px"
