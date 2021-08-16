@@ -1,3 +1,28 @@
+import contactForm from '../form';
+
+const contactPage = () => {
+    return (
+    
+    <div>
+        <h2>This is a contact page</h2>
+        {<contactForm/>}
+    </div>
+
+    );
+}
+export default contactPage;
+
+
+
+
+
+
+
+
+
+
+
+
 // import firebase from "../firebase";
 // import 'firebase/firestore';
 

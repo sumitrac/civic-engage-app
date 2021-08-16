@@ -18,6 +18,7 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 import aboutPage from './components/pages/aboutPage';
 import EventPage from './components/pages/eventPage';
+import contactPage from './components/pages/contactPage';
 // import Navbar from './components/layout/Navbar'
 // // import Dashboard from './components/dashboard/Dashboard';
 // import React, { Component } from 'react';
@@ -33,6 +34,7 @@ import SignUp from "./components/auth/signUp";
 // import Application from "./components/auth/Application";
 import UserProvider from "./providers/UserProvider";
 import ProfilePage from "./components/auth/profilePage";
+
 // import getNextEvents from './components/pages/contactPage';
 // import { UserContext } from "./providers/UserProvider";
 
@@ -58,7 +60,7 @@ const App = () => {
                   {/* <Route path='/' exact component={Home} /> */}
                     <Route path='/' exact component={aboutPage} />
                     <Route path='/EventPage' component={EventPage} />
-                    {/* <Route path='/Application' component={Application} /> */}
+                    <Route path='/contactPage' component={contactPage}/>                   {/* <Route path='/Application' component={Application} /> */}
                     <Route path='/SignUp' component={SignUp} />
                     <Route path='/SignIn' component={SignIn} />
                     <Route path='/profilePage' component={ProfilePage} />
