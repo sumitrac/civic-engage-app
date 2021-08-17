@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { UserContext } from "../../providers/UserProvider";
 // import { navigate } from 'react-router-dom';
 import {auth} from "../../firebase";
+import profile from './profile.css'
 
 const ProfilePage = () => {
     const user = useContext(UserContext);
@@ -25,11 +26,13 @@ const ProfilePage = () => {
                 className="border border-blue-300"
             ></div>
             <div className = "md:pl-4">
-            <h2 className = "text-2xl font-semibold">Hey {displayName}, you're signed in!</h2>
-            <h3 className = "italic">{email}</h3>
+            <h2 className = "text-2xl font-semibold">Welcome {displayName}, you're signed in!</h2>
+            {/* <h3 className = "italic">{email}</h3> */}
             </div>
             </div>
-            <button className = "w-full py-3 bg-red-600 mt-4 text-white" onClick = {() => {auth.signOut()}}>Sign out</button>
+            <button variant="contained" color="primary" onClick = {() => {auth.signOut()}}>Sign out</button>
+
+            {/* <button className = "w-full py-3 bg-red-600 mt-4 text-black" onClick = {() => {auth.signOut()}}>Sign out</button> */}
         </div>
         )
     ) 
