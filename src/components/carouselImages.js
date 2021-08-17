@@ -9,8 +9,8 @@ const CarouselContainer = () => {
   return (
     <div className="wholeContainer">
 
-        <div className="carousel-item active">
-          <div className="container">
+      <div className="container-one">
+          <div className="top-container">
               <h1>Civic Engagement in the Digital Age</h1>
               <p>Civic engagement is important to the health of democratic nations.<br/> Well-functioning democracies are the result of active participation of their public. </p>
               <a href="/SignUp" className="btn btn-lg btn-primary">
@@ -18,7 +18,8 @@ const CarouselContainer = () => {
               </a>
           </div>
       </div>
-      <div className="container">
+
+      <div className="container-two">
         <div class="row">
           <div className="col-sm first-row">
             <h1>About the project</h1>
@@ -32,11 +33,8 @@ const CarouselContainer = () => {
                 </p>
 
           </div>
-
         </div>
       </div>
-
-
 
     </div>
 

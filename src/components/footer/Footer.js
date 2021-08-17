@@ -1,13 +1,11 @@
 import React from 'react'
+import footer from './footer.css'
 
-function Footer() {
+const Footer = () => {
     return (
-        <div style={{
-            color: 'blue'
-        }}>
-            <h1>Copyright &copy; 2021</h1>
+        <div className="footer">
+            <p>Copyright &copy; 2021, Ada Developers Capstone project</p>
         </div>
-    )
-}
+        )}
 
 export default Footer
