@@ -11,7 +11,7 @@ const eventPage = () => {
         // height: '100vh'
         // }}
     >
-        <h1>Check out all events</h1>
+        {/* <h1>Check out all events</h1> */}
         {<Events/>}
     </div>
     );

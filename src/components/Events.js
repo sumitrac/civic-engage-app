@@ -112,8 +112,11 @@ function Events() {
     
            {/* if edit button, display this form */}
             { user && (
+                <div className="eventContainer"> 
+                <h1 >Check out all Events</h1>
+
                 <div className="eventInput">
-                <h3>Add New Event</h3>
+                    <h3>Add New Event</h3>
 
                 {/* input section for event tag */}
                 <label> Enter Event Tag:
@@ -171,16 +174,18 @@ function Events() {
                 <button onClick={() => addEvent({ tag, title, start_date, end_date, desc, amount, id: uuidv4() })}>
                     SUBMIT
                 </button>
+                <hr />
+            </div>
             </div>
             )
             }   
 
 
             {/* line break */}
-            <hr />
+            {/* <hr /> */}
 
             {/* This section will show up without user login */}
-            <h1>Check out events from the City of Portland!</h1>
+            <h1 className="eventHead">Check out events from the City of Portland!</h1>
             {loading ? <h1>Loading...</h1> : null}
 
             {events.map((event) => (

@@ -25,3 +25,20 @@
 .eventSubmit:hover {
     background-color: #4CAF50;
 }
+
+.eventHead{
+    margin-top: 20px;
+    text-align: center;
+    font-style: italic;
+    font-family: fantasy;
+
+}
+.eventContainer h1 {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.eventInput h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
