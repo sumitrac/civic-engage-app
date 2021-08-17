@@ -2,7 +2,9 @@ import React from 'react'
 
 function Footer() {
     return (
-        <div>
+        <div style={{
+            color: 'blue'
+        }}>
             <h1>Copyright &copy; 2021</h1>
         </div>
     )

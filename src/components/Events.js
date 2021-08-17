@@ -225,9 +225,7 @@ function Events() {
                     </button> 
                 </div>
                 )
-                };
-
-
+                }
             </div>
             )) }
         </Fragment>

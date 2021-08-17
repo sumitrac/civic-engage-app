@@ -8,12 +8,13 @@
     justify-content: space-around;
     align-items: center;
     height: 85px;
-    background-color: rgb(182, 240, 240);
+    background-color: rgb(15, 20, 20);
 }
 .logo {
     font-size: 40px;
     font-family: cursive;
     font-weight: bolder;
+    color: white;
 }
 .nav-links{
     display:flex;
@@ -27,7 +28,7 @@
 .contactpage,
 .login {
     text-decoration: none;
-    color:black;
+    color:rgb(226, 220, 220);
     font-size: 20px;
     padding: 10px 20px;
     margin: 0 10px;
@@ -36,7 +37,7 @@
 }
 
 .login {
-    border: 1px solid black;
+    border: 1px solid rgb(218, 213, 213);
     border-radius: 5px;
 }
 
@@ -58,7 +59,7 @@
         position: absolute;
         display: black;
         list-style: none;
-        background-color:blue;
+        background-color:rgb(12, 12, 161);
         left: 0;
         top: 75px;
         transition: all 0.5s ease-out;
@@ -84,8 +85,8 @@
         display: block;
         position: absolute;
         font-size: 30px;
-        color:black;
-        background-color: rgb(98, 236, 236);
+        color:rgb(248, 247, 252);
+        background-color: rgb(11, 12, 12);
         border: none;
         outline: none;
         top: 15px;
