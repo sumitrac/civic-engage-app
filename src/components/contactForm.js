@@ -5,35 +5,36 @@ import Button from 'react-bootstrap/Button';
 
 const contactForm = () => {
     return (
-        <div>
-            <h1>Hello World!</h1>
+        <div style={{ display: 'block', 
+                    width: 700, 
+                    padding: 30,
+                    }}>
+        <h4 style={{
+            textAlign:'center',
+        }}>Send a message!</h4>
+        <Form>
+        <Form.Group>
+            <Form.Label>Enter your full name:</Form.Label>
+            <Form.Control type="text" 
+                            placeholder="Enter your name" />
+            </Form.Group>
+            <Form.Group>
+            <Form.Label>Enter your email address:</Form.Label>
+            <Form.Control type="email" 
+                            placeholder="Enter your email address" />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                <Form.Label>Example textarea</Form.Label>
+                <Form.Control as="textarea" rows={3} />
+            </Form.Group>
+
+            <Button variant="primary" type="submit">
+            Click here to submit form
+            </Button>
+        </Form>
         </div>
-    )}
-    //     <div style={{ display: 'block', 
-    //                 width: 700, 
-    //                 padding: 30 }}>
-    //     <h4>React-Bootstrap Form Component</h4>
-    //     <Form>
-    //     <Form.Group>
-    //         <Form.Label>Enter your full name:</Form.Label>
-    //         <Form.Control type="text" 
-    //                         placeholder="Enter your full name" />
-    //         </Form.Group>
-    //         <Form.Group>
-    //         <Form.Label>Enter your email address:</Form.Label>
-    //         <Form.Control type="email" 
-    //                         placeholder="Enter your your email address" />
-    //         </Form.Group>
-    //         <Form.Group>
-    //         <Form.Label>Enter your age:</Form.Label>
-    //         <Form.Control type="number" placeholder="Enter your age" />
-    //         </Form.Group>
-    //         <Button variant="primary" type="submit">
-    //         Click here to submit form
-    //         </Button>
-    //     </Form>
-    //     </div>
-    // );
-    // }
+    );
+    }
 
 export default contactForm;

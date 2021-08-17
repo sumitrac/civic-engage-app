@@ -20,6 +20,7 @@ function Events() {
     const [end_date, setEnd_date] = useState("")
     const [desc, setDesc] = useState("");
     const [amount, setAmount] = useState("");
+
     const [incentive, setIncentive] = useState(false)
 
     const ref = firebase.firestore().collection("events")
@@ -92,6 +93,7 @@ function Events() {
         }
     // Add Incentive 
     function addIncentive(addPayment) {
+        const ref = firebase.firestore().collection("events")
         ref 
             .doc(addPayment.id)
             .set(addPayment)
