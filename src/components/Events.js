@@ -7,12 +7,14 @@ import 'firebase/firestore';
 // import App from "./src/app";
 import { v4 as uuidv4 } from "uuid";
 import { UserContext } from "../providers/UserProvider";
-import Event from './Event.css'
+import './Event.css'
+import EachEvent from './EachEvent'
 
 function Events() {
     const user = useContext(UserContext);
 
     const [events, setEvents] = useState([]);
+
     const [loading, setLoading] = useState(false);
     const [tag, setTag] = useState("");
     const [title, setTitle] = useState("");
@@ -21,11 +23,11 @@ function Events() {
     const [desc, setDesc] = useState("");
     const [amount, setAmount] = useState("");
 
-    const [incentive, setIncentive] = useState(false)
+    // const [incentive, setIncentive] = useState(false)
 
     const ref = firebase.firestore().collection("events")
     // .orderBy('title')
-    .limit(20)
+    .limit(40)
     // console.log(ref)
 
     // GET FUNCTION 
@@ -39,7 +41,7 @@ function Events() {
         ref.onSnapshot((querySnapshot) => {
             const eventList = [];
             querySnapshot.forEach((doc) => {
-            eventList.push(doc.data());
+            eventList.push({...doc.data(), id:doc.id });
 
             });
             console.log(eventList)
@@ -68,7 +70,7 @@ function Events() {
         }
 
     // DELETE FUNCTION 
-    function deleteMeeting(event) {
+    function deleteEvent(event) {
         const ref = firebase.firestore().collection("events")
         ref
             .doc(event.id)
@@ -79,7 +81,7 @@ function Events() {
         }
 
     // EDIT FUNCTION
-    function editMeeting(updatedEvent) {
+    function editEvent(updatedEvent) {
         const ref = firebase.firestore().collection("events")
         // newEvent.email = user.email 
         // console.log('hello')
@@ -189,49 +191,54 @@ function Events() {
             {loading ? <h1>Loading...</h1> : null}
 
             {events.map((event) => (
-            <div className="event_list" key={event.id}>
-                <p>{event.tag}</p>
-                <h2>{event.title}</h2>
-                <time>{event.start_date}</time>
-                <time>{event.end_date}</time>
-                <p>{event.desc}</p>
-                {/* <p>{event.info_link}</p> */}
-                <p>{event.amount}</p>
-                {/* <p>posted by {event.user}</p> */}
-
-            {/* This happen when user is login and login email match */}
-                {user && event.email === user.email && (
-                <div> 
-                    <button onClick={() => deleteMeeting(event)}>Delete</button>
-
-                    {/* both method not working */}
-                    {/* <button onClick={() => editMeeting(updatedEvent)}>Edit event</button> */}
-
-                    <button onClick={() => editMeeting({tag: event.tag, title: event.title, start_date: event.start_date, end_date: event.end_date, desc: event.desc, id: uuidv4, id: event.id })
-                        }>Edit</button>
-                </div>
-                )
-                }
-
-                {user &&  (
-                <div>
-                    <button onClick={() => setIncentive(true)}>Add Incentive</button>
-                    
-                    {incentive && (
-                    <input 
-                    placeholder="Incentive Amount"
-                    type="number"
-                    value={amount}
-                    prefix= {'$'}
-                    onChange={(e) => setAmount(e.target.value)}/>)}
+                // function event(props)
                 
-                    <button onClick={() => addIncentive(event, incentive)}>
-                        SUBMIT
-                    </button> 
-                </div>
-                )
-                }
-            </div>
+                <EachEvent event={event} key={event.id}/>
+
+            // <div className="event_list" key={event.id}>
+            //     <p>{event.tag}</p>
+            //     <h2>{event.title}</h2>
+            //     <time>{event.start_date}</time>
+            //     <time>{event.end_date}</time>
+            //     <p>{event.desc}</p>
+            //     {/* <p>{event.info_link}</p> */}
+            //     <p>{event.amount}</p>
+            //     {/* <p>posted by {event.user}</p> */}
+
+            // {/* This happen when user is login and login email match */}
+            //     {user && event.email === user.email && (
+            //     <div>
+            //         <div> 
+            //             <button onClick={() => deleteEvent(event)}>Delete</button>
+
+            //             {/* both method not working */}
+            //             {/* <button onClick={() => editEvent(updatedEvent)}>Edit event</button> */}
+            //             <button onClick={() => editEvent({tag: event.tag, title: event.title, start_date: event.start_date, end_date: event.end_date, desc: event.desc, id: uuidv4, id: event.id })
+            //                 }>Edit</button>
+            //         </div>
+            //     </div>
+            //     )
+            //     }
+
+            //     {user &&  (
+            //     <div>
+            //         <button onClick={() => setIncentive(true)}>Add Incentive</button>
+                    
+            //         {incentive && (
+            //         <input 
+            //         placeholder="Incentive Amount"
+            //         type="number"
+            //         value={amount}
+            //         prefix= {'$'}
+            //         onChange={(e) => setAmount(e.target.value)}/>)}
+                
+            //         <button onClick={() => addIncentive(event, incentive)}>
+            //             SUBMIT
+            //         </button> 
+            //     </div>
+            //     )
+            //     }
+            // </div>
             )) }
         </Fragment>
         );
